@@ -36,9 +36,6 @@
    display: inline-block;
    min-height: 60px;
    min-width: 200px;
-   // flex-direction: column;
-   // justify-content: center;
-   // align-items: center;
    padding: 20px;
    background: linear-gradient(150.26deg, rgba(23, 85, 83, 0.7) 1.7%, rgba(67, 217, 173, 0.091) 81.82%);
    border: 1px solid #0C1616;
@@ -46,10 +43,12 @@
    backdrop-filter: blur(32px);
    border-radius: 8px;
    position: relative;
+   overflow: hidden;
    cursor: pointer;
+   z-index: 1;
+   transition: all 0.5s linear;
    &:hover .button span{
       font-size: 35px;
-      // line-height: 57.5px;
    }
 }
 .bolt{
@@ -85,7 +84,14 @@
 }
 .button {
    // display: none;
+   position: absolute;
+   top: 0;
+   left: 0;
    height: 60px;
+   width: 100%;
+   padding: 20px 0;
+   z-index: 2;
+   transition: all 0.1s linear;
    & span{
       font-weight: 600;
       font-size: 30px;
@@ -94,10 +100,24 @@
       color: #FEA55F;
       transition: all 0.3s linear;
    }
-   
+   &._active{
+      z-index: 0;
+      opacity: 0;
+      transition: all 0.3s linear;
+   }
 }
 .form {
-   display: none;
+   // display: none;
+   position: absolute;
+   opacity: 0;
+   z-index: 0;
+   
+   &._active{
+      position: relative;
+      opacity: 1;
+      z-index: 2;
+      transition: all 0.4s linear;
+   }
    &__search {
       display: flex;
       height: 40px;
@@ -156,8 +176,8 @@
    }
 
    &__criteria {
-      display: none;
-      // display: flex;
+      position: absolute;
+      display: flex;
       justify-content: space-between;
       height: 40px;
       margin: 20px 0 0 0;
@@ -166,6 +186,10 @@
       border-radius: 8px;
       overflow: hidden;
       padding: 10px;
+      transition: all 0.2s linear;
+      &._active{
+         position: relative;
+      }
    }
 
    &__ganres {

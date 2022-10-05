@@ -104,7 +104,11 @@ a {
           backdrop-filter: blur(32px);
   border-radius: 8px;
   position: relative;
+  overflow: hidden;
   cursor: pointer;
+  z-index: 1;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .container:hover .button span {
@@ -152,7 +156,15 @@ a {
 }
 
 .button {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 60px;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 2;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 
 .button span {
@@ -165,8 +177,25 @@ a {
   transition: all 0.3s linear;
 }
 
+.button._active {
+  z-index: 0;
+  opacity: 0;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
 .form {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+}
+
+.form._active {
+  position: relative;
+  opacity: 1;
+  z-index: 2;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
 }
 
 .form__search {
@@ -251,7 +280,10 @@ a {
 }
 
 .form__criteria {
-  display: none;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -263,6 +295,12 @@ a {
   border-radius: 8px;
   overflow: hidden;
   padding: 10px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.form__criteria._active {
+  position: relative;
 }
 
 .form__ganres {
