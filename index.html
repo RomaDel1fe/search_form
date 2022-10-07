@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Movies Search</title>
+   <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+   
+   <div class="wrapper">
+
+      <div class="content">
+         <div class="title">
+            <h1><span>Find</span> what you want to <span>watch</span></h1>
+         </div>
+         <div class="container">
+            <span class="bolt"></span>
+            <span class="bolt"></span>
+            <div class="button"><span>Start</span></div>
+            <form action="" class="form">
+               <div class="form__search">
+                  <input type="text" class="form__search-input" placeholder="Search">
+                  <input type="submit" class="form__search-sub">
+               </div>
+               <div class="form__criteria">
+                  <div class="form__ganres">
+                     <input list="ganres" name="ganre" placeholder="Ganres">
+                     <datalist id="ganres" class="form__ganres-drop">
+                        <option value="Сomedy">
+                        <option value="Action">
+                        <option value="Drama">
+                        <option value="Crime">
+                        <option value="Hidtory">
+                        <option value="Mystery">
+                     </datalist>
+                  </div>
+                  <div class="form__years">
+                     <input list="years" name="years" placeholder="Years">
+                     <datalist id="years" class="form__years-drop">
+                        <option value="2022">
+                        <option value="2021">
+                        <option value="2020">
+                        <option value="2019">
+                        <option value="2018">
+                        <option value="2017">
+                     </datalist>
+                  </div>
+               </div>
+            </form>
+            <span class="bolt"></span>
+            <span class="bolt"></span>
+         </div>
+      </div>
+   </div>
+   
+   <script src="js/main.js"></script>
+</body>
+</html>
